@@ -13,7 +13,7 @@ datasource db {
 model User {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
   name            String
-  image           String?
+  image           String? @default("https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg")
   email           String? @unique
   emailVerified   DateTime?
   hashedPassword  String?
