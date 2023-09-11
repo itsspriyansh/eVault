@@ -4,6 +4,7 @@ import { GovContext } from '@/context/AppContext';
 interface Certificate {
   name: string;
   description: string;
+  department: string;
   imageURL: string;
 }
 
@@ -32,6 +33,7 @@ const AddCertificate: React.FC<Props> = () => {
 
   return (
     <>
+   
       {currentAccount}
       <button onClick={showCertificates} className='bg-blue-400 w-20'>
         Get
@@ -39,10 +41,12 @@ const AddCertificate: React.FC<Props> = () => {
       {certificates.map((item: Certificate, id: number) => (
         <div key={id}>
           {item.name}
+          {item.department}
           {item.description}
           {item.imageURL}
         </div>
       ))}
+     
     </>
   );
 };

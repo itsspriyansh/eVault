@@ -32,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full fixed z-40">
+    <nav className="w-full z-40">
       <div
         className={`px-4 md:px-16 py-3 flex flex-row items-center transition duration-500 bg-slate-600 ${
           showBackground ? "bg-slate-600 bg-opacity-70" : ""
