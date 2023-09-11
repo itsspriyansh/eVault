@@ -53,10 +53,10 @@ const DropFileInput: React.FC<DropFileInputProps> = (props) => {
             <div key={index} className={styles.drop_file_preview__item}>
               <img
                 src={
-                  ImageConfig[item["type"].split("/")[1]].src ||
+                  ImageConfig[item["type"].split("/")[1]]?.src ||
                   ImageConfig["default"].src
                 }
-                alt="kuch to hai"
+                alt="file"
               />
               <div className={styles.drop_file_preview__item__info}>
                 <p>{item["name"]}</p>

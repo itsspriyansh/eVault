@@ -1,7 +1,7 @@
 import DropFileInput from "./DropFileInput";
 
 function DragAndDrop() {
-  const onFileChange = (files: File[]) => {
+  const onFileChange = (files: File[]): void => {
     console.log(files);
   };
 
