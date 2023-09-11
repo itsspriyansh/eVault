@@ -25,6 +25,12 @@ const AccountMenu: React.FC<AccountMenuInterface> = ({ visible }) => {
         </div>
       </div>
       <hr className="bg-gray-300 border-0 h-px my-4" />
+      <Link href="/">
+        <div className="px-3 text-center text-slate-500 text-sm hover:underline">
+          Your Certificates
+        </div>
+      </Link>
+      <hr className="bg-gray-300 border-0 h-px my-4" />
       <Link href="/Add">
         <div className="px-3 text-center text-slate-500 text-sm hover:underline">
           Add Certificate

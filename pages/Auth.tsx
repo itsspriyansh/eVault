@@ -44,7 +44,7 @@ const Auth = () => {
 
   return (
     <div className="relative h-full w-full">
-      <div className="bg-white h-full w-full lg:bg-opacity-60">
+      <div className="h-full w-full lg:bg-opacity-60">
         <nav className="px-12 py-5 bg-slate-600 mb-12">
           <div className="flex">
             <BsShieldLockFill className="h-[2rem] w-[2rem] text-slate-200" />
