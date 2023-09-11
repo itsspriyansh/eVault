@@ -7,6 +7,7 @@ const AddCertificate: React.FC<Props> = () => {
   const [name, setName] = useState<string>('');
   const [dept, setDept] = useState<string>('');
   const [img, setImg] = useState<string>('');
+  //@ts-ignore
   const { connectWallet, ConnectToWallet, currentAccount, mintCertificate   } =  useContext(GovContext);
 
   useEffect(() => {

@@ -2,28 +2,27 @@ import { getSession } from "next-auth/react";
 import { NextPageContext } from "next";
 import Navbar from "@/components/Navbar";
 
-export async function getServerSideProps (context : NextPageContext) {
+export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
 
   if (!session) {
     return {
-      redirect : {
-        destination : "/Auth",
-        permanent : false
-      }
-    }
+      redirect: {
+        destination: "/Auth",
+        permanent: false,
+      },
+    };
   }
 
   return {
-    props : {}
-  }
+    props: {},
+  };
 }
 
 export default function Home() {
   return (
-    <div className="h-[500rem]" >
+    <>
       <Navbar />
-      home page
-    </div>
-  )
+    </>
+  );
 }

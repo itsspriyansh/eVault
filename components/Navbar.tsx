@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
+import { BsChevronDown, BsShieldLockFill } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
 import useCurrentUser from "@/hooks/useCurrentUser";
 
@@ -38,9 +38,14 @@ const Navbar = () => {
           showBackground ? "bg-slate-600 bg-opacity-70" : ""
         }`}
       >
-        <img src="/images/logo.png" className="h-10 lg:h-14" alt="Logo" />
+        <div className="flex">
+          <BsShieldLockFill className="h-[2rem] w-[2rem] text-slate-200" />
+          <p className="mt-[1px] text-lg text-slate-200 font-bold ml-2">
+            eVault
+          </p>
+        </div>
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
-          {/* NAVBAR_ITEM */}
+
         </div>
 
         <div className="flex flex-row ml-auto gap-7 items-center">

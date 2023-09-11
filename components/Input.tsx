@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
 interface InputProps {
-  id : string,
-  onChange : any,
-  label : string,
-  value : string,
-  type? : string
+  id: string;
+  onChange: any;
+  label: string;
+  value: string;
+  type?: string;
 }
 
-const Input:React.FC<InputProps> = ({ id, onChange, label, value, type }) => {
-
+const Input: React.FC<InputProps> = ({ id, onChange, label, value, type }) => {
   return (
     <div className="relative">
       <input
@@ -36,7 +35,7 @@ const Input:React.FC<InputProps> = ({ id, onChange, label, value, type }) => {
         placeholder="  "
       />
       <label
-        htmlFor='Email'
+        htmlFor="Email"
         className="
         absolute 
         text-md
@@ -52,11 +51,12 @@ const Input:React.FC<InputProps> = ({ id, onChange, label, value, type }) => {
         peer-placeholder-shown:scale-100 
         peer-placeholder-shown:translate-y-0 
         peer-focus:scale-75
-        peer-focus:-translate-y-3">
-          {label}
-        </label>
+        peer-focus:-translate-y-3"
+      >
+        {label}
+      </label>
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

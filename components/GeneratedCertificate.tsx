@@ -10,6 +10,7 @@ interface Certificate {
 interface Props {}
 
 const AddCertificate: React.FC<Props> = () => {
+  //@ts-ignore
   const { ConnectToWallet, connectWallet, currentAccount, fetchCertificates, certificates } =
     useContext(GovContext);
 
