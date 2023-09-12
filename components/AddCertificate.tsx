@@ -6,7 +6,6 @@ interface Props {}
 const AddCertificate: React.FC<Props> = () => {
   const [name, setName] = useState<string>("");
   const [dept, setDept] = useState<string>("");
-  const [desc, setDesc] = useState<string>("");
   const [img, setImg] = useState<string>("");
   //@ts-ignore
   const { connectWallet, ConnectToWallet, currentAccount, mintCertificate } =
@@ -19,7 +18,7 @@ const AddCertificate: React.FC<Props> = () => {
 
   const addCertificate = async () => {
     try {
-      const res = await mintCertificate(currentAccount, name,dept, desc, img);
+      const res = await mintCertificate(currentAccount, name, dept, img);
       console.log(res);
       setName("");
       setDept("");
@@ -46,14 +45,6 @@ const AddCertificate: React.FC<Props> = () => {
         value={dept}
         onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
           setDept(e.target.value)
-        }
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={desc}
-        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
-          setDesc(e.target.value)
         }
       />
       <input

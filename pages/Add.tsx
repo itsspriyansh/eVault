@@ -8,14 +8,14 @@ import React from 'react';
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
 
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/Auth",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/Auth",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {},

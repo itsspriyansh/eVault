@@ -4,6 +4,7 @@ import axios from "axios";
 import { signIn } from "next-auth/react";
 import { BsShieldLockFill } from "react-icons/bs";
 
+
 const Auth = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -43,9 +44,9 @@ const Auth = () => {
   }, [name, email, password, login]);
 
   return (
-    <div className="relative h-full w-full">
-      <div className="h-full w-full lg:bg-opacity-60">
-        <nav className="px-12 py-5 bg-slate-600 mb-12">
+    <div className="relative w-full h-full">
+      <div className="w-full h-full lg:bg-opacity-60">
+        <nav className="px-12 py-5 mb-12 bg-slate-600">
           <div className="flex">
             <BsShieldLockFill className="h-[2rem] w-[2rem] text-slate-200" />
             <p className="mt-[1px] text-lg text-slate-200 font-bold ml-2">
@@ -56,7 +57,7 @@ const Auth = () => {
 
         <div className="flex justify-center">
           <div className=" bg-slate-300 bg-opacity-70 px-12 sm:px-[10rem] lg:px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
-            <h2 className="text-zinc-800 text-3xl mb-8 font-bold font">
+            <h2 className="mb-8 text-3xl font-bold text-zinc-800 font">
               {variant === "register" ? "Register" : "Sign in"}
             </h2>
             <div className="flex flex-col gap-4">
@@ -87,18 +88,18 @@ const Auth = () => {
 
               <button
                 onClick={variant === "register" ? register : login}
-                className=" bg-slate-600 py-3 text-white rounded-md w-full mt-10 hover:bg-slate-800 transition"
+                className="w-full py-3 mt-10 text-white transition rounded-md bg-slate-600 hover:bg-slate-800"
               >
                 {variant === "register" ? "Sign up" : "Login"}
               </button>
 
-              <p className="text-neutral-500 mt-12 font">
+              <p className="mt-12 text-neutral-500 font">
                 {variant === "register"
                   ? "Already have an account?"
                   : "New User?"}
                 <span
                   onClick={toggleVariant}
-                  className="text-black ml-2 hover:underline cursor-pointer"
+                  className="ml-2 text-black cursor-pointer hover:underline"
                 >
                   {variant === "register" ? "Sign in" : "Create an account"}
                 </span>
