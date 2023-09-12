@@ -8,7 +8,7 @@ function DragAndDrop() {
   return (
     <div className="mainContainer">
       <div className="box">
-        <h2 className="header"> Drop file here</h2>
+        <h2 className="header">Drop Files Here </h2>
         <DropFileInput
           onFileChange={(files) => {
             onFileChange(files);
