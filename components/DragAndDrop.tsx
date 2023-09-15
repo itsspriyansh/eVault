@@ -1,8 +1,26 @@
+import { useContext } from "react";
 import DropFileInput from "./DropFileInput";
-
+import axios from "axios";
+import { AppContext, GovContext } from "@/context/AppContext";
 function DragAndDrop() {
-  const onFileChange = (files: File[]): void => {
-    console.log(files);
+
+
+ //@ts-ignore
+  const {imgURL,setImgURL}=useContext(GovContext);
+  const onFileChange = async(files: File[]): void => {
+    const formData = new FormData();
+
+    for (const file of files) {
+        formData.append("file", file);
+        formData.append("upload_preset", "ecomnext")
+    }
+    const data = await axios
+      .post("https://api.cloudinary.com/v1_1/dt21djrjq/image/upload",
+          formData
+      )
+     console.log(data.data.url)
+     setImgURL(data.data.url);
+
   };
 
   return (
@@ -14,6 +32,7 @@ function DragAndDrop() {
             onFileChange(files);
           }}
         />
+        {imgURL}
       </div>
     </div>
   );

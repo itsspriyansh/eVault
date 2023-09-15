@@ -633,14 +633,13 @@ const connectingWithSmartContract = async () => {
 
 export function AppContext({ children }) {
 
-  const [test, setTest] = useState('shobhit')
   const [success, setSuccess] = useState("");
   const [openSuccess, setOpenSuccess] = useState(false);
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
   const [currentAccount, setCurrentAccount] = useState("");
   const router = useRouter();
-  const [name, setName] = useState("hiii");
+  const [imgURL,setImgURL]=useState();
   const ConnectToWallet = async () => {
     try {
       if (!window.ethereum)
@@ -731,7 +730,7 @@ export function AppContext({ children }) {
   };
 
   return (
-    <GovContext.Provider value={{ ConnectToWallet, connectWallet, currentAccount, mintCertificate, fetchCertificates, certificates, }}>
+    <GovContext.Provider value={{ ConnectToWallet, connectWallet, currentAccount, mintCertificate, fetchCertificates, certificates,imgURL,setImgURL }}>
       {children}
     </GovContext.Provider>
   );
