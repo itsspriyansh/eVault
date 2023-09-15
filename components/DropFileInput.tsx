@@ -24,7 +24,7 @@ const DropFileInput: React.FC<DropFileInputProps> = (props) => {
 
   const handleFileUpload = async (selectedFile: File) => {
     if (selectedFile) {
-      setPicLoading(true);
+      setPicLoading(prev => true);
 
       try {
         const formData = new FormData();
@@ -40,10 +40,10 @@ const DropFileInput: React.FC<DropFileInputProps> = (props) => {
         const fileUrl = response.data.url;
         setPic(fileUrl);
         console.log(fileUrl);
-        setPicLoading(false);
+        setPicLoading(prev => false);
       } catch (error) {
         console.error(error);
-        setPicLoading(false);
+        setPicLoading(prev => false);
       }
     }
   };

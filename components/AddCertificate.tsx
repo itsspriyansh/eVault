@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { GovContext } from "@/context/AppContext";
 
-interface Props {}
+interface AddCertificateProps {}
 
-const AddCertificate: React.FC<Props> = () => {
+const AddCertificate: React.FC<AddCertificateProps> = () => {
   const [name, setName] = useState<string>("");
   const [dept, setDept] = useState<string>("");
   const [img, setImg] = useState<string>("");
