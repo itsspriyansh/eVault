@@ -6,9 +6,9 @@ interface AddCertificateProps {}
 const AddCertificate: React.FC<AddCertificateProps> = () => {
   const [name, setName] = useState<string>("");
   const [dept, setDept] = useState<string>("");
-  const [img, setImg] = useState<string>("");
+  const [desc, setDesc] = useState<string>("");
   //@ts-ignore
-  const { connectWallet, ConnectToWallet, currentAccount, mintCertificate } =
+  const { connectWallet, ConnectToWallet, currentAccount, mintCertificate,imgURL } =
     useContext(GovContext);
 
   useEffect(() => {
@@ -18,11 +18,11 @@ const AddCertificate: React.FC<AddCertificateProps> = () => {
 
   const addCertificate = async () => {
     try {
-      const res = await mintCertificate(currentAccount, name, dept, img);
+      const res = await mintCertificate(currentAccount, name, dept, desc,imgURL);
       console.log(res);
       setName("");
       setDept("");
-      setImg("");
+      setDesc("");
     } catch (error) {
       console.error(error);
     }
@@ -49,10 +49,10 @@ const AddCertificate: React.FC<AddCertificateProps> = () => {
       />
       <input
         type="text"
-        placeholder="ImgUrl"
-        value={img}
+        placeholder="Description"
+        value={desc}
         onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
-          setImg(e.target.value)
+          setDesc(e.target.value)
         }
       />
       <button onClick={addCertificate}>Add</button>
